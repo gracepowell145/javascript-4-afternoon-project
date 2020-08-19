@@ -99,7 +99,7 @@ function Family(numParents, numKids, numPets) {
   this.numPets = numPets
 
   this.whatIsThis = function() {
-    return this
+    return 
   }
 }
 

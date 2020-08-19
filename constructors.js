@@ -15,6 +15,11 @@
 */
 
 // Code here
+function CarFactory (make, model){
+  this.make = make,
+  this.model= model
+}
+
 
 ////////// PROBLEM 2 //////////
 
@@ -34,7 +39,7 @@ function Employee(name, email, hireDate) {
   */
   
   // Code here
-  
+  const bob = new Employee("Bob", "bob@gmail.com", '01-02-98')
   ////////// PROBLEM 3 //////////
   
   // Do not edit the code below.
@@ -57,6 +62,15 @@ function Employee(name, email, hireDate) {
   */
   
   // Code here
+  function Car(make, model, year){
+    this.make= make;
+    this.model= model;
+    this.year= year;
+    this.move = 0;
+    this.moveCar = function() {
+      return this.move += 10;
+  }
+}
   
   ////////// PROBLEM 4 //////////
   
@@ -74,9 +88,12 @@ function Employee(name, email, hireDate) {
     this.genre = genre;
     this.rating = rating;
   }
+
   
   // Code here
-  
+  Movie.prototype.changeRating = function(num){
+    return (this.rating + num) % 2;
+  }
   ////////// PROBLEM 5 //////////
   
   // Write a constructor function called User. This function should take in 4 parameters called name, age, email, and savedPosts in that order. Name and email will be strings, age will be a number and savedPosts will be an array of objects. These objects will each have 3 properties: id (a number), title (a string), and rating (a number between 1 and 5). These objects are the posts that the user will have saved to their account.
@@ -84,6 +101,16 @@ function Employee(name, email, hireDate) {
   // Once the User constructor function is created, write a prototype method for the User function. Name this method addSavedPost. It should take in three parameters: id (a number), title (a string) and rating (a number). Use these parameters to create a new object and add it to the savedPosts array. Make sure to name the properties the same as described previously (id, title, rating).
   
   // Code here
+  function User(name, age, email, savedPosts){
+    this.id = id;
+   this.title = title;
+    this.rating = rating;
+    savedPosts = []
+  }
+ User.prototype.addSavedPosts(id, title, rating); {
+  id + title + rating; 
+ }
+ const savedPosts = new User (addSavedPosts)
   
   ////////// PROBLEM 6 //////////
   
@@ -91,6 +118,17 @@ function Employee(name, email, hireDate) {
   // Write a prototype method for the User constructor function named removeSavedPost that will take in one number parameter representing the post id. Use this id to find and remove the matching object in the savedPosts array.
   
   // Code here
+  User.prototype.removeSavedpost(id); {
+    for (let i= 0; i < savedPosts.length; i++){
+      if (id === savedPosts.id){
+        return Array.splice 
+      }
+
+    }
+    delete id.savedPosts;
+    };
+    
+  
   
   ////////// PROBLEM 7 //////////
   
@@ -98,4 +136,3 @@ function Employee(name, email, hireDate) {
   // Write a prototype method for the User constructor function named changePostRating that will take in two number parameters. The first will be an id (a number) and the second will be the new rating (a number). Use the id to find the matching object in the savedPosts array. Once you find the matching object, update it's rating score with the new rating parameter.
   
   // Code here
-  
